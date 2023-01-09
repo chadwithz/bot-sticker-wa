@@ -3,12 +3,15 @@ import qrcode from 'qrcode-terminal'
 
 const client = new Client({
     puppeteer: {
-		args: ['--no-sandbox'],
-	}
+                args: ['--no-sandbox'],
+                executablePath: '/path/to/chromium',
+        },
+    ffmpeg: '/path/to/ffmpeg'
 });
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
+    console.log(qr)
 });
 
 client.on('ready', () => {
