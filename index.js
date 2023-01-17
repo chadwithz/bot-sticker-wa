@@ -6,7 +6,7 @@ const client = new Client({
 		args: ['--no-sandbox'],
 		executablePath: '/usr/bin/chromium',
 	},
-    ffmpeg: '/usr/bin/ffmpeg'
+    	ffmpeg: '/usr/bin/ffmpeg',
 });
 
 client.on('qr', (qr) => {
