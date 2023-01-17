@@ -4,11 +4,14 @@ import qrcode from 'qrcode-terminal'
 const client = new Client({
     puppeteer: {
 		args: ['--no-sandbox'],
-	}
+		executablePath: '/usr/bin/chromium',
+	},
+    ffmpeg: '/usr/bin/ffmpeg'
 });
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
+    console.log(qr)
 });
 
 client.on('ready', () => {
