@@ -4,9 +4,9 @@ import qrcode from 'qrcode-terminal'
 const client = new Client({
     puppeteer: {
 		args: ['--no-sandbox'],
-		executablePath: '/usr/bin/chromium',
+		executablePath: '/path/to/chromium',
 	},
-    	ffmpeg: '/usr/bin/ffmpeg',
+    	ffmpeg: '/path/to/ffmpeg',
 });
 
 client.on('qr', (qr) => {
